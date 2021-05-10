@@ -34,14 +34,12 @@ function Admin_workplace({slide}){
     }
     return(
         <div className={slide?"workplace":"on-off-workplace"}>
-                <h3 className={!on?"form-head":"d-none"}>DANH SÁCH KHÁCH HÀNG </h3>  
-                <ul className={!on?"form-func":"d-none"}>
-                        <li className="setting_form"><i className="fa fa-cogs" aria-hidden="true"></i></li>
-                        <li className="find_form_li"><i className="fa fa-search" aria-hidden="true"></i> <input type="text" onChange={handleChange} className = "find_form"/> </li>
+                <h3 className={!on?"form-head":"d-none"}></h3>  
+                <ul className={!on?"":"d-none"}>
                 </ul>
                 <div className={!on?"workplace_display":"d-none"}>
                     <table className="table table-striped table-bordered table-hover">
-                        <thead className="thead-success">
+                        <thead className="thead">
                             <tr>
                                 <th>MÃ KHÁCH HÀNG</th>
                                 <th>HỌ TÊN KHÁCH HÀNG</th>
@@ -50,7 +48,6 @@ function Admin_workplace({slide}){
                                 <th>EMAIL</th>
                                 <th>GIỚI TÍNH</th>
                                 <th>USERNAME</th>
-                                <th>PASSWORD</th>
                                 <th>DELETE</th>
                             </tr>
                         </thead>
@@ -75,7 +72,6 @@ function Admin_workplace({slide}){
                                        <td>{kh.email}</td>
                                        <td>{gender()}</td>
                                        <td>{kh.taikhoan?.username}</td>
-                                       <td>****</td>
                                        <td className="custom"><p className="custom-link" onClick={()=> getDeleteKH(kh.taikhoan.matk)}>Delete</p> </td>
                                     </tr>
                                 )

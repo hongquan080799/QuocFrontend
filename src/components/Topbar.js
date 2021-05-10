@@ -42,11 +42,11 @@ function Topbar(){
         if(user!=null){
             return (
                 <div onMouseEnter={()=>setOpen(true)} onMouseLeave={()=> setOpen(false)}>
-                    <p className="login item mr-3"><i className="fa fa-user-circle fa-lg" aria-hidden="true" ></i> {user?.ho +' ' +  user?.ten}</p>
+                    <p className="login item mr-3">{user?.ho +' ' +  user?.ten}</p>
                     {open?
                         <div class="myAccount" style={{zIndex:1}}>
-                            <p data-toggle="modal" data-target="#accountInfo"><i class="fa fa-user" aria-hidden="true"></i> Thông tin tài khoản</p>
-                            <p onClick={()=> history.push('/viewOrder')}><i class="fa fa-shopping-bag" aria-hidden="true"></i> Đơn hàng của tôi</p>
+                            <p data-toggle="modal" data-target="#accountInfo">Thông tin tài khoản</p>
+                            <p onClick={()=> history.push('/viewOrder')}>Đơn hàng của tôi</p>
                         </div> :''  
                      }
                 </div>
@@ -54,7 +54,7 @@ function Topbar(){
         }
         else
             return (
-                <p onClick={()=>{history.push('/login')}} className="login item mr-3"><i className="fa fa-user-circle fa-lg" aria-hidden="true"></i> Đăng nhập</p>
+                <p onClick={()=>{history.push('/login')}} className="login item mr-3">Đăng nhập</p>
             )
     }
     const isLogout = ()=>{
@@ -92,7 +92,7 @@ function Topbar(){
                     <div className='topbar__more d-flex'>
                         {isLogin()}
                         <Link to='/cart'>
-                         <p className="cart item mr-3"><i className="fa fa-shopping-cart fa-lg" aria-hidden="true"></i> Giỏ hàng</p>
+                         <p className="cart item mr-3">Giỏ hàng</p>
                         </Link>
                         {isLogout()}
                     </div>

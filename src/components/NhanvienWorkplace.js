@@ -60,15 +60,14 @@ function Admin_workplace({slide}){
     }
     return(
         <div className={slide?"workplace":"on-off-workplace"}>
-                <h3 className={!on?"form-head":"d-none"}>DANH SÁCH KHÁCH HÀNG</h3>  
-                <ul className={!on?"form-func":"d-none"}>
-                        <li className="setting_form"><i className="fa fa-cogs" aria-hidden="true"></i></li>
-                        <li className="add_form" onClick={()=>getInsertTK()}><i className="fa fa-plus-square-o" aria-hidden="true"></i>ADD</li>
-                        <li className="find_form_li"><i className="fa fa-search" aria-hidden="true"></i> <input type="text" onChange={handleChange} className = "find_form"/> </li>
+                <h3 className={!on?"form-head":"d-none"}></h3>  
+                <ul className={!on?"":"d-none"} style={{listStyle:'none'}}>
+                        
+                         <li className="add_form" onClick={()=>getInsertTK()}><button className="btn btn-outline-info"><i className="fa fa-plus-square-o" aria-hidden="true"></i>Thêm nhân viên</button></li>
                 </ul>
                 <div className={!on?"workplace_display":"d-none"}>
                     <table className="table table-striped table-bordered table-hover">
-                        <thead className="thead-success">
+                        <thead className="thead">
                             <tr>
                                 <th>MÃ NHÂN VIÊN</th>
                                 <th>HỌ TÊN NHÂN VIÊN</th>
@@ -120,12 +119,11 @@ function Admin_workplace({slide}){
                 <div>
                     <div className={on?"workplace_input":"d-none"}>
                     <div className="card">
-                    <div className="card-header text-white bg-primary d-flex justify-content-between px-4">FORM NHẬP SẢN PHẨM<span className="exit-input" onClick={()=>setOn(!on)}>X</span></div>
                     <div className="card-body">
                     <form onSubmit={handleSubmit}>
                             <div class="modal-body">
                                 <div className="row">
-                                    <div className="col-6">
+                                    <div className="col-12">
                                         <label>Họ nhân viên</label>
                                         <input className="form-control" placeholder="Please enter here ..." name='ho' onChange={updateInput}/>
                                         <label>Tên nhân viên</label>
@@ -139,11 +137,6 @@ function Admin_workplace({slide}){
                                             <option value={1}>Nam</option>
                                             <option value={0}>Nữ</option>
                                         </select>
-                                        <button className="btn btn-success mt-4 mr-4 btn-input"  type="submit" >Submit</button>
-                                        <button className="btn btn-info mt-4 mr-4 btn-input" type="reset">Reset</button>
-                                        <button className="btn btn-danger mt-4 btn-input" type="button" onClick={()=>setOn(!on)}>Exit</button>
-                                    </div>
-                                    <div className="col-6">
                                         <label>Địa chỉ</label>
                                         <input className="form-control" placeholder="Please enter here ..." name='diachi' onChange={updateInput}/>
                                         <label>Lương</label>
@@ -152,6 +145,12 @@ function Admin_workplace({slide}){
                                         <input className="form-control" placeholder="Please enter here ..." name='username' onChange={updateInput}/>
                                         <label>Password</label>
                                         <input className="form-control" placeholder="Please enter here ..." name='password' type="password" onChange={updateInput}/>
+                                        <button className="btn btn-warning mt-4 mr-4 btn-input"  type="submit" >Submit</button>
+                                        <button className="btn btn-outline-danger mt-4 mr-4 btn-input" type="reset">Reset</button>
+                                        <button className="btn btn-info mt-4 btn-input" type="button" onClick={()=>setOn(!on)}>Exit</button>
+                                    </div>
+                                    <div className="col-6">
+                                                                                
                                     </div>
                                 </div>
                                 

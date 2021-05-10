@@ -141,7 +141,7 @@ function Admin_workplace({slide}){
         <div className={slide?"workplace":"on-off-workplace"}>
                 <h3 className={!on?"form-head":"d-none"}></h3>  
                 <ul className={!on?"":"d-none"} style={{listStyle:'none'}}>
-                        <li className="" onClick={()=>getInsertSP()}><button className="btn btn-outline-info"><i className="fa fa-plus-square-o" aria-hidden="true"></i>ADD</button></li>
+                        <li className="" onClick={()=>getInsertSP()}><button className="btn btn-outline-info"><i className="fa fa-plus-square-o" aria-hidden="true"></i>Thêm sản phẩm</button></li>
                 </ul>
                 <div className={!on?"workplace_display":"d-none"}>
                     <table className="table table-striped table-bordered table-hover">
@@ -254,34 +254,25 @@ function Admin_workplace({slide}){
                 <div>
                 <div className={on?"workplace_input":"d-none"}>
                 <div className="card">
-                <div className="card-header text-white bg-primary d-flex justify-content-between px-4">FORM NHẬP SẢN PHẨM<span className="exit-input" onClick={()=>setOn(!on)}>X</span></div>
                 <div className="card-body">
                 <form onSubmit={handleSubmit(onSubmit)}>
                         <div class="modal-body">
                             <div className="row">
-                                <div className="col-6">
+                                <div className="col-12">
                                     <label>Mã sản phẩm</label>
-                                    <input className="form-control" placeholder="Please enter here ..." ref={register} name='masp' readOnly={onUpdate?true:false}/>
+                                    <input className="form-control" placeholder="" ref={register} name='masp' readOnly={onUpdate?true:false}/>
                                     <label>Tên sản phẩm</label>
-                                    <input className="form-control" placeholder="Please enter here ..." ref={register} name='tensp'/>
+                                    <input className="form-control" placeholder="" ref={register} name='tensp'/>
                                     <label>Số lượng</label>
-                                    <input className="form-control" placeholder="Please enter here ..." ref={register} name='soluong' type='number' />
+                                    <input className="form-control" placeholder="" ref={register} name='soluong' type='number' />
                                     <label>Đơn giá</label>
-                                    <input className="form-control" placeholder="Please enter here ..." ref={register} name='dongia' type='number' />
+                                    <input className="form-control" placeholder="" ref={register} name='dongia' type='number' />
                                     <label>Hình ảnh</label>
                                     <div className="form-group">
-                                          <input className="form-control-file border" placeholder="Please enter here ..." ref={register} name='photo' type="file" onChange={handleImage}/>
+                                          <input className="form-control-file border" placeholder="" ref={register} name='photo' type="file" onChange={handleImage}/>
                                     </div>
-                                    <div className={fileUrl!==''?"":"d-none"}>
-                                        <img src={fileUrl} alt="quan" style={{maxWidth:"100%"}}/>
-                                    </div>
-                                    <button className="btn btn-success mt-4 mr-4 btn-input"  type="submit" >Submit</button>
-                                    <button className="btn btn-info mt-4 mr-4 btn-input" type="reset" onClick={()=> setFileUrl('')}>Reset</button>
-                                    <button className="btn btn-danger mt-4 btn-input" onClick={()=>setOn(!on)} type="button">Exit</button>
-                                </div>
-                                <div className="col-6">
                                     <label>Khuyến mãi</label>
-                                    <input className="form-control" placeholder="Please enter here ..." ref={register} name='khuyenmai' />
+                                    <input className="form-control" placeholder="" ref={register} name='khuyenmai' />
                                     <label>Danh mục</label>
                                     <select className="form-control" ref={register} name='madm'>
                                         {danhmuc?.map(dm=>(
@@ -289,9 +280,18 @@ function Admin_workplace({slide}){
                                         ))}
                                     </select>
                                     <label>Mô tả</label>
-                                    <input className="form-control" placeholder="Please enter here ..." ref={register} name='motangan'/>
+                                    <input className="form-control" placeholder="" ref={register} name='motangan'/>
                                     <label>Mô tả chi tiết</label>
-                                    <textarea className="form-control" placeholder="Please enter here ..." ref={register} name='motachitiet' rows="5"/>
+                                    <textarea className="form-control" placeholder="" ref={register} name='motachitiet' rows="5"/>
+                                    <div className={fileUrl!==''?"":"d-none"}>
+                                        <img src={fileUrl} alt="quan" style={{maxWidth:"100%"}}/>
+                                    </div>
+                                    <button className="btn btn-warning mt-4 mr-4 btn-input"  type="submit" >Submit</button>
+                                    <button className="btn btn-outline-danger mt-4 mr-4 btn-input" type="reset" onClick={()=> setFileUrl('')}>Reset</button>
+                                    <button className="btn btn-info mt-4 btn-input" onClick={()=>setOn(!on)} type="button">Exit</button>
+                                </div>
+                                <div className="col-6">
+                                    
                                 </div>
                             </div>
                             

@@ -29,7 +29,7 @@ function Login(){
             else if(quyen == 2)
                 history.push('/')
             else if(quyen == 3)
-            history.push('/nhanvien/index')
+            history.push('/admin/index')
             
         })
         .catch(erro => alert('login thất bại !!!'))

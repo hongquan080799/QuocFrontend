@@ -105,14 +105,13 @@ export default function Cart(){
      const sendEmail = (myMessage)=>{
             var templateParams = {
                 to_name:user.ho + ' '  + user.ten,
-                from_name: 'Chủ tịch Hồng Quân',
-                message:myMessage,
-                url:'https://scontent.fsgn5-7.fna.fbcdn.net/v/t1.6435-9/79771446_2469549519965437_8172007245870006272_n.jpg?_nc_cat=103&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=pLCmJOHT02EAX9MvKRe&_nc_ht=scontent.fsgn5-7.fna&oh=fc6dd68ebb012af9470ac03ddc02817c&oe=60B45DDC',
+                from_name: 'Công ty FastFOOD',
+                message:'Bạn đã đặt đơn thành công',
                 notes: 'Check this out!',
-                email:'hongquan080799@gmail.com'
+                email: user.email
             };
              
-            emailjs.send('service_c4h4x3s', 'template_iy1y5te', templateParams,'user_eXT3mcACRHWvnrHkCZPaZ')
+            emailjs.send('service_c4h4x3s', 'template_au2r4sv', templateParams,'user_eXT3mcACRHWvnrHkCZPaZ')
                 .then(function(response) {
                    console.log('SUCCESS!', response.status, response.text);
                 }, function(error) {
@@ -190,7 +189,7 @@ export default function Cart(){
                                 <tr key={c.sanpham.masp}>
                                     <td onClick={()=> deleteCart(c.sanpham.masp)} className="deleteCart">&#10005;</td>
                                     <td><img src={c.sanpham.photo} alt="picture" style={{width:"70px",marginRight:"30px"}} /> {c.sanpham.tensp}</td>
-                                    <td style={{width:"15%"}}><input type="number" className="form-control" min="1" defaultValue={c.soluong} onClick={(e)=>changeNum(e,c.sanpham)} /></td>
+                                    <td style={{width:"15%"}}><input type="number" className="form-control" min="1" max={c.sanpham?.soluong} defaultValue={c.soluong} onClick={(e)=>changeNum(e,c.sanpham)} /></td>
                                     <td><p className="text-danger">{c.sanpham.dongia * c.soluong} đ</p></td>
                                     <td><input type="checkbox" className="form-check-input" onClick={(e)=>checkSP(e,c.sanpham,c.soluong)}/></td>
                                 </tr>

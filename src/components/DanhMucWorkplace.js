@@ -77,15 +77,13 @@ function Admin_workplace({slide}){
     }
     return(
         <div className={slide?"workplace":"on-off-workplace"}>
-                <h3 className={!on?"form-head":"d-none"}>DANH SÁCH DANH MỤC</h3>  
-                <ul className={!on?"form-func":"d-none"}>
-                        <li className="setting_form"><i className="fa fa-cogs" aria-hidden="true"></i></li>
-                        <li className="add_form" onClick={()=>getInsertDM()}><i className="fa fa-plus-square-o" aria-hidden="true"></i>ADD</li>
-                        <li className="find_form_li"><i className="fa fa-search" aria-hidden="true"></i> <input type="text" className = "find_form" onChange={handleSearch}/> </li>
+                <h3 className={!on?"form-head":"d-none"}></h3>  
+                <ul style={{listStyle:'none'}} className={!on?"":"d-none"} >
+                <li className="" onClick={()=>getInsertDM()}><button className="btn btn-outline-info"><i className="fa fa-plus-square-o" aria-hidden="true"></i>Thêm danh mục</button></li>
                 </ul>
                 <div className={!on?"workplace_display":"d-none"}>
                     <table className="table table-striped table-bordered table-hover">
-                        <thead className="thead-success">
+                        <thead className="thead">
                             <tr>
                                 <th>MÃ DANH MỤC</th>
                                 <th>TÊN DANH MỤC</th>
@@ -113,7 +111,6 @@ function Admin_workplace({slide}){
                 <div>
                 <div className={on?"workplace_input":"d-none"}>
                 <div className="card">
-                <div className="card-header text-white bg-primary d-flex justify-content-between px-4">FORM NHẬP SẢN PHẨM<span className="exit-input" onClick={()=>setOn(!on)}>X</span></div>
                 <div className="card-body">
                 <form onSubmit={handleSubmit(onSubmit)}>
                         <div class="modal-body">
@@ -124,9 +121,9 @@ function Admin_workplace({slide}){
                                     <label>Tên danh mục</label>
                                     <input className="form-control" placeholder="Please enter here ..." ref={register} name='tendm'/>
                                 </div>        
-                                <button className="btn btn-success mt-4 mr-4 btn-input"  type="submit" >Submit</button>
-                                <button className="btn btn-info mt-4 mr-4 btn-input" type="reset">Reset</button>
-                                <button className="btn btn-danger mt-4 btn-input" onClick={()=>setOn(!on)} type="button">Exit</button>
+                                <button className="btn btn-warning mt-4 mr-4 btn-input"  type="submit" >Submit</button>
+                                <button className="btn btn-outline-danger mt-4 mr-4 btn-input" type="reset">Reset</button>
+                                <button className="btn btn-info mt-4 btn-input" onClick={()=>setOn(!on)} type="button">Exit</button>
                             </div> 
                         </div>
                  </form>
