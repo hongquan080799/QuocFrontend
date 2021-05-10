@@ -1,0 +1,45 @@
+.topbar{
+    height: 50px;
+    line-height: 50px;
+    background-color: #de9f00;
+    color: #fbfbfb;
+    width: 100%;
+}
+.topbar__more a{
+    text-decoration: none;
+    color: #fbfbfb;
+    display: inline-block;
+}
+.topbar__contact p:hover ,.topbar__more p:hover{
+    cursor: pointer;
+}
+.index{
+    background-color: tomato;
+    border-radius: 100%;
+    padding: 0 5px;
+    font-size: 13px;
+    position: relative;
+    top:-10px;
+    margin-left: 3px;
+}
+.myAccount{
+    position: absolute;
+    background-color: rgb(189, 209, 157);
+    border: 1px solid rgb(218, 74, 74);
+    border-radius: 10px;
+    color: black;
+    width: 100px;
+    top: 46px;
+    padding: 10px 0px;
+    width: fit-content
+}
+.myAccount p{
+    padding: 0 20px;
+}
+.myAccount p:hover{
+    background-color: #e5e2e2;
+
+}
+.table-font{
+    font-size: 18px !important;
+}

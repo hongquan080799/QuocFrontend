@@ -1,0 +1,21 @@
+.custom-link {
+    transition: all 0.5s;
+    color: #336cc0;
+    font-weight: 450;
+}
+.custom-link:hover{
+    color: tomato;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+.detail_product_admin{
+    font-size: 16px;
+    color: #4d4c4c;
+}
+.custom {
+    width: 100px;
+}
+.thead-success{
+    background-color: #4369d7;
+    color: white;
+}

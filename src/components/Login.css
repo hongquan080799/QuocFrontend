@@ -1,0 +1,15 @@
+.login_container{
+    height: 650px;
+    position: relative;
+    width: 100%;
+    background-image: url('https://i.pinimg.com/originals/53/42/69/534269a4ab4697ccb537644a089f7e59.png');
+    background-position: center;
+    background-size: cover  ;
+}
+.login-ct{
+    padding-top: 150px;
+    width: 60%;
+    margin: auto;
+    
+    
+}
