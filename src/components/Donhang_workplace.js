@@ -113,7 +113,7 @@ function Donhang_workplace
                                        <td>{dh.ngaydat}</td>
                                        <td>
                                        {tt == ''?
-                                            <select className="" defaultValue={dh.trangthai} onChange={(e)=>changeTT(e,dh)}>
+                                            <select className="custom-sl" defaultValue={dh.trangthai} onChange={(e)=>changeTT(e,dh)}>
                                                 {dh.trangthai == 0 ?<option value={0}>Chờ xử lý</option>:''}
                                                 {dh.trangthai == 0 || dh.trangthai == 1 ?<option value={1}>Đã xác nhận</option>:''} 
                                                 {dh.trangthai == 0 || dh.trangthai == 1 || dh.trangthai ==2 ?<option value={2}>Đang gửi</option>:''} 
@@ -137,15 +137,12 @@ function Donhang_workplace
                                              <div className="modal fade" id={dh.madh} tabIndex={-1} role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                  <div className="modal-dialog modal-xl" role="document">
                                                    <div className="modal-content">
-                                                     <div className="modal-header bg-warning">
-                                                       <h5 className="modal-title" id="exampleModalLabel">Chi tiết đơn hàng {dh.madh}</h5>
-                                                       <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                                                         <span aria-hidden="true">×</span>
-                                                       </button>
+                                                     <div className="modal-header bg-warning text-white">
+                                                       <h5 className="modal-title" id="exampleModalLabel" style={{margin:'auto',textAlign:'center'}}>Chi tiết đơn hàng {dh.madh}</h5>
                                                      </div>
                                                      <div className="modal-body">
                                                        <div className="table-responsive">
-                                                       <table className="table table-striped table-bordered table-hover">
+                                                       <table className="table table-striped table-bordered table-dark table-hover">
                                                          <thead>
                                                            <tr>
                                                              <th scope="col">Mã sản phẩm</th>
@@ -172,7 +169,7 @@ function Donhang_workplace
                                              
                                                      </div>
                                                      <div className="modal-footer">
-                                                       <button type="button" className="btn btn-info" data-dismiss="modal">Thoát</button>
+                                                       <button type="button" className="btn-custom" data-dismiss="modal" >Thoát</button>
                                                      </div>
                                                    </div>
                                                  </div>
