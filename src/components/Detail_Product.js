@@ -152,10 +152,10 @@ function Detail_Product(){
                 </div>
                 <div className="row mt-4">
                     <div className="col-7">
-                        <input type="number" className="form-control" min="0" defaultValue="1" max={sanpham?.soluong - getMaxSL(sanpham?.masp)} disabled={sanpham?.soluong == 0 || (sanpham?.soluong - getMaxSL(sanpham?.masp))<=0} />
+                        <input type="number" onChange={(e)=>setSl(e.target.value)} className="form-control" min="0" defaultValue="1" max={sanpham?.soluong - getMaxSL(sanpham?.masp)} disabled={sanpham?.soluong == 0 || (sanpham?.soluong - getMaxSL(sanpham?.masp))<=0} />
                     </div>
                     <div className="col-5   ">
-                        <button className="btn btn-warning" onClick={()=>addCart(sanpham.masp)}><i className="fa fa-shopping-cart" aria-hidden="true"></i> Add to card</button>
+                        <button className="btn btn-outline-warning" onClick={()=>addCart(sanpham.masp)}>THÊM GIỎ HÀNG</button>
                     </div>
                 </div>
                 

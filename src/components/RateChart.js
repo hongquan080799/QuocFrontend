@@ -3,7 +3,7 @@ import ReactStars from "react-rating-stars-component";
 const RateChart = (props)=>{
     return (
         <div style={{marginTop:50, marginBottom:30}}>
-            <h5>ĐÁNH GIÁ KHÁCH HÀNG</h5>
+            <h5>ĐÁNH GIÁ CỦA KHÁCH</h5>
             <div className="d-flex">
                 <div className="flex-grow-1">
                     <div className="row align-items-center">

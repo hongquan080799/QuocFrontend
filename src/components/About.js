@@ -20,6 +20,12 @@ export default function About(){
             <div class="col-sm-6 col-md-4 contact-icon">
                 <i class="fa fa-twitter fa-lg" aria-hidden="true"></i>
             </div>
+            <div className="col-6">
+                <img src="https://kfcvietnam.com.vn/uploads/banner/55e251880deec0ecc66ec6ad17e10832.png" />
+            </div>
+            <div className="col-6">
+                <img src="https://kfcvietnam.com.vn/uploads/banner/55e251880deec0ecc66ec6ad17e10832.png" />
+            </div>
         </div>
         </div>
     )

@@ -39,42 +39,15 @@ function Navbar(){
          </a>
          <Link to='/'>
           <a className="navbar-brand d-none d-sm-block" to="/#">
-              FASTFOOD
+          <img src="https://i.pinimg.com/originals/b1/2e/e7/b12ee7389041544b207b9488c55301ef.png" style={{width:100}}/> FASTFOOD 
           </a>
          </Link>
-        <form className='search input-group ' onFocus={()=>setIsSearch(true)} onBlur={()=>setIsSearch(false)}>
-            <input className='form-control' placeholder='Nhập để tìm kiếm . . .' onChange={handleSearch} />
-            <div className="input-group-append">
-                <button className='btn btn-warning'><i className="fa fa-search" aria-hidden="true"></i></button>
-            </div>
-            {isSearch?
-              <div className="searchBox">
-              <div className="table-responsive">
-              <table className="table table-borderless table-hover table-dark" >
-                <tbody>
-                  {products.map(sp=>{
-                    if(sp.tensp.toLowerCase().includes(search.toLowerCase()))
-                    return (
-                      <tr key={sp.masp} onMouseDown={()=> window.location.href="/product/"+sp.masp}  >
-                          <td>{sp.masp}</td>
-                          <td>{sp.tensp}</td>
-                          <td>{sp.soluong}</td>
-                          <td>{sp.dongia}</td>
-                      </tr>
-                    )
-                  })}
-                </tbody>
-              </table>
-              </div>
-              
-            </div>:''
-            }
-        </form>
+        
          <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
            <span className="navbar-toggler-icon" />
                </button>
                <div className="collapse navbar-collapse" id="navbarText">
-                 <ul className="navbar-nav ml-auto">
+                 <ul className="navbar-nav mr-auto">
                    <li className="nav-item">
                      <a className='nav-link'>TRANG CHỦ</a>
                    </li>
@@ -98,7 +71,34 @@ function Navbar(){
                  
                </div>
                
-               
+               <form className='search input-group ' onFocus={()=>setIsSearch(true)} onBlur={()=>setIsSearch(false)}>
+            <input className='form-control' placeholder='Nhập để tìm kiếm . . .' onChange={handleSearch} />
+            <div className="input-group-append">
+                <button className='btn btn-warning'>Tìm kiếm</button>
+            </div>
+            {isSearch?
+              <div className="searchBox">
+              <div className="table-responsive">
+              <table className="table table-borderless table-hover table-light" >
+                <tbody>
+                  {products.map(sp=>{
+                    if(sp.tensp.toLowerCase().includes(search.toLowerCase()))
+                    return (
+                      <tr key={sp.masp} onMouseDown={()=> window.location.href="/product/"+sp.masp}  >
+                          <td>{sp.masp}</td>
+                          <td>{sp.tensp}</td>
+                          <td>{sp.soluong}</td>
+                          <td>{sp.dongia}</td>
+                      </tr>
+                    )
+                  })}
+                </tbody>
+              </table>
+              </div>
+              
+            </div>:''
+            }
+        </form>
              </nav>
     )
 }
